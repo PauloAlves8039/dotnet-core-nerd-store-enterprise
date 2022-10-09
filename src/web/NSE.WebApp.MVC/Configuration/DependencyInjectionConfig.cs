@@ -22,15 +22,8 @@ namespace NSE.WebApp.MVC.Configuration
 
             services.AddHttpClient<ICatalogoService, CatalogoService>()
                 .AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
-                //.AddTransientHttpErrorPolicy(p => p.WaitAndRetryAsync(3, _ => TimeSpan.FromMilliseconds(600)))
-                .AddPolicyHandler(PollyExtensions.AguardarTentativa());
-
-            //services.AddHttpClient("Refit", options => 
-            //{
-            //    options.BaseAddress = new Uri(configuration.GetSection("CatalogoUrl").Value);
-            //})
-            //.AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>()
-            //.AddTypedClient(Refit.RestService.For<ICatalogoServiceRefit>);
+                .AddPolicyHandler(PollyExtensions.AguardarTentativa())
+                .AddTransientHttpErrorPolicy(p => p.CircuitBreakerAsync(5, TimeSpan.FromSeconds(30)));
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddScoped<IUser, AspNetUser>();
