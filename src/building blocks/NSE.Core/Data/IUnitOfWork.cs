@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NSE.Core.DomainObjects.Data
+namespace NSE.Core.Data
 {
     public interface IUnitOfWork
     {
