@@ -4,7 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace NSE.Cliente.API
+namespace NSE.Costumer.API
 {
     public class Startup
     {

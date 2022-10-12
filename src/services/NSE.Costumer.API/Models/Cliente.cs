@@ -1,7 +1,7 @@
 ﻿using NSE.Core.DomainObjects;
 using System;
 
-namespace NSE.Cliente.API.Models
+namespace NSE.Costumer.API.Models
 {
     public class Cliente : Entity, IAggregateRoot
     {
