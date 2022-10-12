@@ -10,7 +10,7 @@ using NSE.Costumer.API.Data;
 namespace NSE.Costumer.API.Migrations
 {
     [DbContext(typeof(ClientesContext))]
-    [Migration("20221012133242_Clientes")]
+    [Migration("20221012134506_Clientes")]
     partial class Clientes
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
