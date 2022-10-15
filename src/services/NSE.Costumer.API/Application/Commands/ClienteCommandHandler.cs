@@ -4,6 +4,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using NSE.Costumer.API.Models;
 using NSE.Core.Messages;
+using NSE.Costumer.API.Application.Events;
 
 namespace NSE.Costumer.API.Application.Commands
 {
@@ -31,6 +32,8 @@ namespace NSE.Costumer.API.Application.Commands
             }
 
             _clienteRepository.Adicionar(cliente);
+
+            cliente.AdicionarEvento(new ClienteRegistradoEvent(message.Id, message.Nome, message.Email, message.Cpf));
 
             return await PersistirDados(_clienteRepository.UnitOfWork);
         }
