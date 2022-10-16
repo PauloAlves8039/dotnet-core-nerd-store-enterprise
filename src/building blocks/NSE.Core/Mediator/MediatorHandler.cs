@@ -1,8 +1,7 @@
-﻿using MediatR;
+﻿using FluentValidation.Results;
 using NSE.Core.Messages;
-using System;
-using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using MediatR;
 
 namespace NSE.Core.Mediator
 {
@@ -15,14 +14,14 @@ namespace NSE.Core.Mediator
             _mediator = mediator;
         }
 
-        public Task<ValidationResult> EnviarComando<T>(T comando) where T : Command
+        public async Task<ValidationResult> EnviarComando<T>(T comando) where T : Command
         {
-            throw new NotImplementedException();
+            return await _mediator.Send(comando);
         }
 
-        public Task PublicarEvento<T>(T evento) where T : Event
+        public async Task PublicarEvento<T>(T evento) where T : Event
         {
-            throw new NotImplementedException();
+            await _mediator.Publish(evento);
         }
     }
 }
