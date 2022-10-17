@@ -31,21 +31,15 @@ namespace NSE.WebApp.MVC.Controllers
         [Route("nova-conta")]
         public async Task<IActionResult> Registro(UsuarioRegistro usuarioRegistro) 
         {
-            if (!ModelState.IsValid) 
-            { 
-                return View(usuarioRegistro);
-            }
+            if (!ModelState.IsValid) return View(usuarioRegistro);
 
             var resposta = await _autenticacaoService.Registro(usuarioRegistro);
 
-            if (ResponsePossuiErros(resposta.ResponseResult))
-            {
-                return View(usuarioRegistro);
-            }
+            if (ResponsePossuiErros(resposta.ResponseResult)) return View(usuarioRegistro);
 
             await RealizarLogin(resposta);
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Catalogo");
         }
 
         [HttpGet]
