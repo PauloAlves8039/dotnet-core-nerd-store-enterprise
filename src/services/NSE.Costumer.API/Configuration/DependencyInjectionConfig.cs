@@ -7,7 +7,6 @@ using NSE.Costumer.API.Application.Events;
 using NSE.Costumer.API.Data;
 using NSE.Costumer.API.Data.Repository;
 using NSE.Costumer.API.Models;
-using NSE.Costumer.API.Services;
 
 namespace NSE.Costumer.API.Configuration
 {
@@ -24,8 +23,6 @@ namespace NSE.Costumer.API.Configuration
 
             services.AddScoped<IClienteRepository, ClienteRepository>();
             services.AddScoped<ClientesContext>();
-
-            services.AddHostedService<RegistroClienteIntegrationHandler>();
         }
     }
 }

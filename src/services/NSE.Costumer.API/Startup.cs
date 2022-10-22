@@ -31,18 +31,15 @@ namespace NSE.Costumer.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApiConfiguration(Configuration);
-
             services.AddSwaggerConfiguration();
-
             services.AddMediatR(typeof(Startup));
-
             services.RegisterServices();
+            services.AddMessageBusConfiguration(Configuration);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseSwaggerConfiguration();
-
             app.UseApiConfiguration(env);
         }
     }
