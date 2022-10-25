@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSE.Carrinho.API.Data;
 using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Carrinho.API.Configuration
