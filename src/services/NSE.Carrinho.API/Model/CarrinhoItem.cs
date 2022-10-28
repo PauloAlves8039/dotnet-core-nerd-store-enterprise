@@ -36,6 +36,12 @@ namespace NSE.Carrinho.API.Model
             Quantidade += unidades;
         }
 
+        internal void AtualizarUnidades(int unidades)
+        {
+            Quantidade = unidades;
+        }
+
+
         internal bool EhValido()
         {
             return new ItemCarrinhoValidation().Validate(this).IsValid;
