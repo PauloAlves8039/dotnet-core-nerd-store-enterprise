@@ -24,6 +24,8 @@ namespace NSE.Carrinho.API.Data
 
             modelBuilder.Ignore<ValidationResult>();
 
+            modelBuilder.Ignore<ValidationResult>();
+
             modelBuilder.Entity<CarrinhoCliente>()
                 .HasIndex(c => c.ClienteId)
                 .HasName("IDX_Cliente");
