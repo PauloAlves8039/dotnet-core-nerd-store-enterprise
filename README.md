@@ -2,7 +2,8 @@
 
 ## :computer: Projeto
 
-Repositório de uma aplicação web para simular uma loja virtual.
+Repositório de uma aplicação web distribuída para simular uma loja virtual, o código fonte do projeto foi baseado no curso 
+[ASP.NET Core Enterprise Applications](https://desenvolvedor.io/curso-online-asp-net-core-enterprise-applications).
 
 ## :wrench: Recursos Utilizados
 
@@ -14,6 +15,9 @@ Repositório de uma aplicação web para simular uma loja virtual.
 - [Swagger v5.3.3](https://swagger.io/)
 - [Identity v3.1.3](https://docs.microsoft.com/pt-br/aspnet/core/security/authentication/identity?view=aspnetcore-5.0&tabs=visual-studio)
 - [JWT v3.1.3](https://jwt.io/)
+- [FluentValidation v3.1.3](https://docs.fluentvalidation.net/en/latest/)
+- [Polly v7.2.1](http://www.thepollyproject.org/)
+- [EasyNetQ v5.1.1](https://easynetq.com/)
 
 ## :floppy_disk: Clonar Repositório
 
