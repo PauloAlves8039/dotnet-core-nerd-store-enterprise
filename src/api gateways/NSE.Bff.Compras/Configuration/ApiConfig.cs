@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NSE.Bff.Compras.Extensions;
 using NSE.WebAPI.Core.Identidade;
 
 namespace NSE.Bff.Compras.Configuration
