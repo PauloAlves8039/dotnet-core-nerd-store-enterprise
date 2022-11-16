@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NSE.WebApp.MVC.Models;
+using NSE.Core.Communication;
 using System.Linq;
 
 namespace NSE.WebApp.MVC.Controllers

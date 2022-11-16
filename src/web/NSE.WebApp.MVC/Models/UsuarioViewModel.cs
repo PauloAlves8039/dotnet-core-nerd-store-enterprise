@@ -1,4 +1,5 @@
-﻿using NSE.WebApp.MVC.Extensions;
+﻿using NSE.Core.Communication;
+using NSE.WebApp.MVC.Extensions;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
