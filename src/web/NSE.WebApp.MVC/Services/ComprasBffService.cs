@@ -15,7 +15,7 @@ namespace NSE.WebApp.MVC.Services
         public ComprasBffService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
-            _httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
+            _httpClient.BaseAddress = new Uri(settings.Value.ComprasBffUrl);
         }
 
         public async Task<CarrinhoViewModel> ObterCarrinho()
