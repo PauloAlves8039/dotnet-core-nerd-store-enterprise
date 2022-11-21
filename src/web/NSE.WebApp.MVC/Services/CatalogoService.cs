@@ -38,4 +38,10 @@ namespace NSE.WebApp.MVC.Services
             return await DeserializarObjetoResponse<IEnumerable<ProdutoViewModel>>(response);
         }
     }
+
+    public interface ICatalogoService
+    {
+        Task<IEnumerable<ProdutoViewModel>> ObterTodos();
+        Task<ProdutoViewModel> ObterPorId(Guid id);
+    }
 }
