@@ -8,10 +8,10 @@ namespace NSE.WebApp.MVC.Controllers
 {
     public class CarrinhoController : MainController
     {
-        private readonly ICarrinhoService _carrinhoService;
+        private readonly IComprasBffService _carrinhoService;
         private readonly ICatalogoService _catalogoService;
 
-        public CarrinhoController(ICarrinhoService carrinhoService, ICatalogoService catalogoService)
+        public CarrinhoController(IComprasBffService carrinhoService, ICatalogoService catalogoService)
         {
             _carrinhoService = carrinhoService;
             _catalogoService = catalogoService;

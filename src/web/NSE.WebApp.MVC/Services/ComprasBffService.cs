@@ -5,15 +5,14 @@ using Microsoft.Extensions.Options;
 using NSE.Core.Communication;
 using NSE.WebApp.MVC.Extensions;
 using NSE.WebApp.MVC.Models;
-using NSE.Core.Communication;
 
 namespace NSE.WebApp.MVC.Services
 {
-    public class CarrinhoService : Service, ICarrinhoService
+    public class ComprasBffService : Service, IComprasBffService
     {
         private readonly HttpClient _httpClient;
 
-        public CarrinhoService(HttpClient httpClient, IOptions<AppSettings> settings)
+        public ComprasBffService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             _httpClient = httpClient;
             _httpClient.BaseAddress = new Uri(settings.Value.CarrinhoUrl);
@@ -59,4 +58,13 @@ namespace NSE.WebApp.MVC.Services
             return RetornoOk();
         }
     }
+
+    public interface IComprasBffService
+    {
+        Task<CarrinhoViewModel> ObterCarrinho();
+        Task<ResponseResult> AdicionarItemCarrinho(ItemProdutoViewModel produto);
+        Task<ResponseResult> AtualizarItemCarrinho(Guid produtoId, ItemProdutoViewModel produto);
+        Task<ResponseResult> RemoverItemCarrinho(Guid produtoId);
+    }
+}
 }
