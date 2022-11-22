@@ -67,4 +67,3 @@ namespace NSE.WebApp.MVC.Services
         Task<ResponseResult> RemoverItemCarrinho(Guid produtoId);
     }
 }
-}
