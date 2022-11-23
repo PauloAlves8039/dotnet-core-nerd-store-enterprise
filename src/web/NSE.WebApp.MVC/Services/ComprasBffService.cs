@@ -27,6 +27,15 @@ namespace NSE.WebApp.MVC.Services
             return await DeserializarObjetoResponse<CarrinhoViewModel>(response);
         }
 
+        public async Task<int> ObterQuantidadeCarrinho()
+        {
+            var response = await _httpClient.GetAsync("/compras/carrinho-quantidade/");
+
+            TratarErrosResponse(response);
+
+            return await DeserializarObjetoResponse<int>(response);
+        }
+
         public async Task<ResponseResult> AdicionarItemCarrinho(ItemProdutoViewModel produto)
         {
             var itemContent = ObterConteudo(produto);
@@ -62,6 +71,7 @@ namespace NSE.WebApp.MVC.Services
     public interface IComprasBffService
     {
         Task<CarrinhoViewModel> ObterCarrinho();
+        Task<int> ObterQuantidadeCarrinho();
         Task<ResponseResult> AdicionarItemCarrinho(ItemProdutoViewModel produto);
         Task<ResponseResult> AtualizarItemCarrinho(Guid produtoId, ItemProdutoViewModel produto);
         Task<ResponseResult> RemoverItemCarrinho(Guid produtoId);
