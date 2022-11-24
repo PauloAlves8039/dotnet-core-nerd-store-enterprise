@@ -36,9 +36,9 @@ namespace NSE.WebApp.MVC.Services
             return await DeserializarObjetoResponse<int>(response);
         }
 
-        public async Task<ResponseResult> AdicionarItemCarrinho(ItemProdutoViewModel produto)
+        public async Task<ResponseResult> AdicionarItemCarrinho(ItemCarrinhoViewModel carrinho)
         {
-            var itemContent = ObterConteudo(produto);
+            var itemContent = ObterConteudo(carrinho);
 
             var response = await _httpClient.PostAsync("/carrinho/", itemContent);
 
@@ -47,11 +47,11 @@ namespace NSE.WebApp.MVC.Services
             return RetornoOk();
         }
 
-        public async Task<ResponseResult> AtualizarItemCarrinho(Guid produtoId, ItemProdutoViewModel produto)
+        public async Task<ResponseResult> AtualizarItemCarrinho(Guid produtoId, ItemCarrinhoViewModel item)
         {
-            var itemContent = ObterConteudo(produto);
+            var itemContent = ObterConteudo(item);
 
-            var response = await _httpClient.PutAsync($"/carrinho/{produto.ProdutoId}", itemContent);
+            var response = await _httpClient.PutAsync($"/compras/carrinho/items/{produtoId}", itemContent);
 
             if (!TratarErrosResponse(response)) return await DeserializarObjetoResponse<ResponseResult>(response);
 
