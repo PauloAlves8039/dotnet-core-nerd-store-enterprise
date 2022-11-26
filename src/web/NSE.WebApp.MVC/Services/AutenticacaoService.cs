@@ -63,4 +63,11 @@ namespace NSE.WebApp.MVC.Services
             return await DeserializarObjetoResponse<UsuarioRespostaLogin>(response);
         }
     }
+
+    public interface IAutenticacaoService
+    {
+        Task<UsuarioRespostaLogin> Login(UsuarioLogin usuarioLogin);
+
+        Task<UsuarioRespostaLogin> Registro(UsuarioRegistro usuarioRegistro);
+    }
 }
