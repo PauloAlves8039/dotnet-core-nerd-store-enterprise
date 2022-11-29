@@ -9,6 +9,7 @@
 	<PackageReference Include="mediatr" Version="8.0.1" />
 	<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="3.1.4" />
 	<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.4" />
+	<PackageReference Include="NetDevPack" Version="1.1.0" />
   </ItemGroup>
 	
 </Project>
