@@ -46,5 +46,14 @@ namespace NSE.Pedido.API.Configuration
 
             });
         }
+
+        public static void UseSwaggerConfiguration(this IApplicationBuilder app)
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+            });
+        }
     }
 }
