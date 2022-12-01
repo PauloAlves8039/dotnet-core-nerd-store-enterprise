@@ -1,13 +1,13 @@
-﻿using System;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System;
 
-namespace NSE.Pedido.API.Configuration
+namespace NSE.Pedidos.API.Configuration
 {
     public static class SwaggerConfig
     {
-        public static void AddSwaggerConfiguration(this IServiceCollection services) 
+        public static void AddSwaggerConfiguration(this IServiceCollection services)
         {
             services.AddSwaggerGen(c =>
             {

@@ -2,11 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <UserSecretsId>aeb28b4e-9fd3-4f52-a458-f4e9146d0037</UserSecretsId>
+    <UserSecretsId>c5fac5ff-abb7-4b4a-ac48-eb528b39756c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
-  
+
   <ItemGroup>
 	<PackageReference Include="dapper" Version="2.0.35" />
 	<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
@@ -18,13 +18,13 @@
 	<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
 	<PackageReference Include="Swashbuckle.AspNetCore" Version="5.4.1" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\..\building blocks\NSE.Core\NSE.Core.csproj" />
-    <ProjectReference Include="..\..\building blocks\NSE.MessageBus\NSE.MessageBus.csproj" />
-    <ProjectReference Include="..\..\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj" />
-    <ProjectReference Include="..\NSE.Pedidos.Domain\NSE.Pedidos.Domain.csproj" />
-    <ProjectReference Include="..\NSE.Pedidos.Infra\NSE.Pedidos.Infra.csproj" />
+	<ProjectReference Include="..\..\building blocks\NSE.Core\NSE.Core.csproj" />
+	<ProjectReference Include="..\..\building blocks\NSE.MessageBus\NSE.MessageBus.csproj" />
+	<ProjectReference Include="..\..\building blocks\NSE.WebAPI.Core\NSE.WebAPI.Core.csproj" />
+	<ProjectReference Include="..\NSE.Pedidos.Domain\NSE.Pedidos.Domain.csproj" />
+	<ProjectReference Include="..\NSE.Pedidos.Infra\NSE.Pedidos.Infra.csproj" />
   </ItemGroup>
 
 

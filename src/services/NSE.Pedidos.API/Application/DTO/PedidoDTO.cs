@@ -1,9 +1,8 @@
-﻿using System;
+﻿using NSE.Pedidos.Domain.Pedidos;
+using System;
 using System.Collections.Generic;
-using NSE.Pedidos.Domain.PedidosDomain;
 
-
-namespace NSE.Pedido.API.Application.DTO
+namespace NSE.Pedidos.API.Application.DTO
 {
     public class PedidoDTO
     {

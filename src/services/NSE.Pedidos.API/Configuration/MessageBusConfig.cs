@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using NSE.Core.Utils;
 using NSE.MessageBus;
 
-namespace NSE.Pedido.API.Configuration
+namespace NSE.Pedidos.API.Configuration
 {
     public static class MessageBusConfig
     {
