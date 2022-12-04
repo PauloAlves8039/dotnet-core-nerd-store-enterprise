@@ -6,6 +6,10 @@ using NSE.Core.Mediator;
 using NSE.Pedidos.API.Application.Commands;
 using NSE.Pedidos.API.Application.Events;
 using NSE.Pedidos.API.Application.Queries;
+using NSE.Pedidos.Domain.Pedidos;
+using NSE.Pedidos.Domain.Vouchers;
+using NSE.Pedidos.Infra.Data;
+using NSE.Pedidos.Infra.Data.Repository;
 using NSE.WebAPI.Core.Usuario;
 
 namespace NSE.Pedidos.API.Configuration
@@ -24,6 +28,10 @@ namespace NSE.Pedidos.API.Configuration
             services.AddScoped<IMediatorHandler, MediatorHandler>();
             services.AddScoped<IVoucherQueries, VoucherQueries>();
             services.AddScoped<IPedidoQueries, PedidoQueries>();
+
+            services.AddScoped<IPedidoRepository, PedidoRepository>();
+            services.AddScoped<IVoucherRepository, VoucherRepository>();
+            services.AddScoped<PedidosContext>();
         }
     }
 }
