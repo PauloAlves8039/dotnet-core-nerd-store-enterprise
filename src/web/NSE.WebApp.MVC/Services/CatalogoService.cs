@@ -12,8 +12,7 @@ namespace NSE.WebApp.MVC.Services
     {
         private readonly HttpClient _httpClient;
 
-        public CatalogoService(HttpClient httpClient,
-            IOptions<AppSettings> settings)
+        public CatalogoService(HttpClient httpClient, IOptions<AppSettings> settings)
         {
             httpClient.BaseAddress = new Uri(settings.Value.CatalogoUrl);
 
