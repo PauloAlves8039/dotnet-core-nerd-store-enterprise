@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using FluentValidation;
 using FluentValidation.Results;
@@ -14,6 +15,7 @@ namespace NSE.Carrinho.API.Model
         public Guid ClienteId { get; set; }
         public decimal ValorTotal { get; set; }
         public List<CarrinhoItem> Itens { get; set; } = new List<CarrinhoItem>();
+        [NotMapped]
         public ValidationResult ValidationResult { get; set; }
 
         public bool VoucherUtilizado { get; set; }

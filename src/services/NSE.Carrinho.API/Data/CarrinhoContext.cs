@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace NSE.Carrinho.API.Data
 {
-    public class CarrinhoContext : DbContext
+    public sealed class CarrinhoContext : DbContext
     {
         public CarrinhoContext(DbContextOptions<CarrinhoContext> options) : base(options)
         {
@@ -24,11 +24,27 @@ namespace NSE.Carrinho.API.Data
 
             modelBuilder.Ignore<ValidationResult>();
 
-            modelBuilder.Ignore<ValidationResult>();
-
             modelBuilder.Entity<CarrinhoCliente>()
                 .HasIndex(c => c.ClienteId)
                 .HasName("IDX_Cliente");
+
+            modelBuilder.Entity<CarrinhoCliente>()
+                .Ignore(c => c.Voucher)
+                .OwnsOne(c => c.Voucher, v =>
+                {
+                    v.Property(vc => vc.Codigo)
+                        .HasColumnName("VoucherCodigo")
+                        .HasColumnType("varchar(50)");
+
+                    v.Property(vc => vc.TipoDesconto)
+                        .HasColumnName("TipoDesconto");
+
+                    v.Property(vc => vc.Percentual)
+                        .HasColumnName("Percentual");
+
+                    v.Property(vc => vc.ValorDesconto)
+                        .HasColumnName("ValorDesconto");
+                });
 
             modelBuilder.Entity<CarrinhoCliente>()
                 .HasMany(c => c.Itens)
